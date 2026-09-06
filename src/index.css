@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .font-serif-heading {
+    font-family: var(--font-serif);
+  }
+
+  /* Global Form Input Visibility & High Contrast Fixes */
+  input, textarea, select {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+    border-color: #D1D5DB !important;
+  }
+
+  input[type="date"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="time"] {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #6B7280 !important;
+    opacity: 1 !important;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    outline: none !important;
+    border-color: #C5A059 !important;
+    box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.25) !important;
+  }
+
+  select option {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+  }
+
+  label {
+    font-weight: 600;
+  }
+}
+
+/* Custom scrollbars and glassmorphism helpers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0F1715;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1A2421;
+}
+
+.glass-card {
+  background: rgba(26, 36, 33, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(15, 23, 21, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom hide scrollbar utility for horizontal scroll cards */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
